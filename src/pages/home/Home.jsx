@@ -9,7 +9,6 @@ const Home = () => {
       <h1 className="HomeTittle">Eventos</h1>
       <Navbar />
       <EventCard />
-
       <div className="HomeEventsContainer">
       </div>
     </div>
