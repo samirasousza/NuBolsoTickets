@@ -1,8 +1,11 @@
-.EventContainer {
+.EventCardContainer {
+    background-color: #f0f0f0;
+    padding: 20px;
     display: flex;
+    grid-template-columns: repeat(2, 1fr);
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 }
   
 .EventCard {

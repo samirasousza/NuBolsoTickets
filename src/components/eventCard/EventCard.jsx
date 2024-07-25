@@ -16,7 +16,7 @@ const EventCard = () => {
                 apikey: 'FcsA4CaN4M6CyCHDrAw6wnhsXLTfGetf', // Substitua pela sua chave da API
                 countryCode: 'US', // Filtrando por país, pode ajustar conforme necessário
                 //classificationName: 'music', // Exemplo de filtro por categoria de música
-                size: 2 // Número de eventos a serem retornados
+                size: 3 // Número de eventos a serem retornados
               }
             });
             setEvents(response.data._embedded.events);
@@ -35,7 +35,7 @@ const EventCard = () => {
       }
 
   return (
-    <div className="EventContainer">
+    <div className="EventCardContainer">
       {events.map(event => (
         <div key={event.id} className=" EventCard">
           <h2>{event.name}</h2>

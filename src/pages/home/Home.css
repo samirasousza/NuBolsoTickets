@@ -1,11 +1,19 @@
 .HomeContainer {
     background-color: brown;
+    olor: #8A8B82;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .HomeTittle {
-    color: black;
+    color: #8A8B82;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 25px;
 }
 
 .HomeEventsContainer {
     background-color: peru;
+    display: grid;
+    
 }
