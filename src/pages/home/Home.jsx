@@ -1,16 +1,19 @@
-import React from 'react'
-import Styles from './Home.css'
+import React from 'react';
+import './Home.css';
+import EventCard from '../../components/eventCard/EventCard';
+import Navbar from '../../components/navbar/Navbar';
 
 const Home = () => {
   return (
-    <div className={Styles.HomeContainer}>
-      <h1 className={Styles.HomeTittle}>Eventos</h1>
+    <div className="HomeContainer">
+      <h1 className="HomeTittle">Eventos</h1>
+      <Navbar />
+      <EventCard />
 
-      <div className={Styles.HomeEventsContainer}>
-        oi
+      <div className="HomeEventsContainer">
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
