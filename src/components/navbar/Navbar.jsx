@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import Logo from '../../assets/NuBolsoLogo.png';
 import SearchBar from '../searchBar/SearchBar';
+import { FaUserCircle } from "react-icons/fa";
 
 let linkCorrente = {
   color: "#027399"
@@ -15,7 +16,7 @@ const Navbar = () => {
     // lógica para realizar busca
   };
 
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   const handleLogin = () => {
     setIsLogin(!isLogin);
@@ -28,17 +29,14 @@ const Navbar = () => {
         </a>
 
       <ul className='navbar-menu'>
-        <li className='navbar-serach-bar'>
-          <SearchBar onSearch={handleSearch}/>
-        </li>
-        <li className='navbar-item'>
-          <button onClick={handleLogin}>
-            {isLogin ? 
-              <NavLink exact activeStyle={linkCorrente} to="/login">Entre ou cadastre-se</NavLink>
-              : 
-              <NavLink exact activeStyle={linkCorrente} to="/pefil">Olá, Fulano</NavLink>
-            }
-          </button>
+        <SearchBar onSearch={handleSearch}/>
+        <li className='navbar-user'>
+          <NavLink to={isLogin ? '/perfil' : '/login'} onClick={handleLogin} className='navbar-user-link>'>
+            <div className='navbar-user-box'>
+              {isLogin && <FaUserCircle className='navbar-user-icon'/>}
+              <span>{isLogin ? 'Olá, Fulano' : 'Entre ou Cadastre-se'}</span>
+            </div>
+          </NavLink>
         </li>
     </ul>
     </div>
