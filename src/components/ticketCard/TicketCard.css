@@ -1,0 +1,66 @@
+.eventcard-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+  
+.eventcard-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(103, 34, 116, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s; 
+    background-color: #f0f0f0;
+}
+
+.eventcard-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(103, 34, 116, 0.5);
+}
+
+.eventcard-infos {
+    
+}
+
+.eventcard-box img{
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura do container */
+    height: 200px; /* Mantém a proporção da imagem */
+    border-radius: 8px 8px 0 0; /* Adiciona bordas arredondadas à imagem */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.eventcard-box h2 {
+    font-size: 1.5em;
+    color: #000;
+    padding: 0 20px 10px 20px ;
+}
+
+.eventcard-itens {
+    border-top: 1px solid rgba(103, 34, 116, 0.5);
+    border-bottom: 1px solid rgba(103, 34, 116, 0.5);
+}
+
+.eventcard-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.eventcard-item-icon {
+    font-size: 20px;
+    color: #000;
+}
+
+.eventcard-item-location {
+
+}
+
+.eventcard-item p {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #000;
+}

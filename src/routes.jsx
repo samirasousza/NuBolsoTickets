@@ -7,6 +7,8 @@ import Signup from './pages/signup/Signup';
 import NotFound from './pages/notFound/NotFound';
 import App from './App';
 import { AuthContext } from './utils/UseAuth';
+import Tickets from './pages/tickets/Tickets';
+import Profile from './pages/profile/Profile';
 
 const AppWrapper = () => {
   const { isAuthentic, setIsAuthentic } = useContext(AuthContext);
@@ -31,6 +33,14 @@ const AppWrapper = () => {
         {
           path: 'event-details',
           element: <EventDetails />,
+        },
+        {
+          path: 'tickets',
+          element: <Tickets />,
+        },
+        {
+          path: 'profile',
+          element: <Profile />,
         },
         {
           path: '*',

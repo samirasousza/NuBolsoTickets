@@ -1,0 +1,15 @@
+.tickets-container {
+    background-color: #FFC145;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+
+}
+
+.tickets-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #672274;
+    text-transform: uppercase;
+}

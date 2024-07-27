@@ -1,9 +1,11 @@
 import React from 'react'
+import Logo from '../../assets/NuBolsoLogo.png'
+import './Loading.css'
 
 const Loading = () => {
   return (
-    <div>
-      <h1>Loading...</h1>
+    <div className='loafing-container'>
+      <img src={Logo} className='loading-logo' />
     </div>
   )
 }

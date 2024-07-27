@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Dropdown.css'
-import { FaRegUser, FaUserAlt, FaUserCircle } from 'react-icons/fa';
+import { FaUserAlt, FaUserCircle } from 'react-icons/fa';
 import { IoLogOut, IoTicket } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
