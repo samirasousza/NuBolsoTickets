@@ -1,0 +1,118 @@
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #672274;
+    width: 100%;
+    height: 100vh;
+}
+
+.signup-card {
+    background-color: white;
+    width: 385px;
+    border-radius: 50px;
+    padding: 20px 0;
+}
+
+.signup-form {
+    margin-left: 52px;
+    margin-right: 52px;
+}
+
+.signup-card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 45px;
+}
+
+.signup-card label {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.signup-card input{
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    border: none;
+    height: 28px;
+    width: 280px;
+    margin-bottom: 18px;
+}
+
+.signup-checkbox {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.signup-checkbox input{
+    display: flex;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.signup-checkbox p{
+    display: inline;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.signup-checkbox a {
+    margin-left: 25px;
+    font-size: 12px;
+    color: #672274;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.signup-checkbox a:hover {
+    color: #FFC145;
+}
+
+.signup-card input[type='submit'] {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    display: inline-block;
+    border-radius: 15px;
+    border: none;
+    font-weight: 600;
+    height: 28px;
+    width: 280px;
+    background-color: #672274;
+    color: white;
+}
+
+.signup-card input[type='submit']:hover {
+    cursor: pointer;
+    background-color: #FFC145;
+    color: #672274;
+}
+
+.signup-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.signup-login p{
+    display: inline;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.login-link {
+    color: black;
+    text-decoration: none;
+    color: #672274;
+    font-weight: 700;
+}
+
+.login-link:hover {
+    cursor: pointer;
+    color: #FFC145;
+}

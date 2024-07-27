@@ -26,6 +26,10 @@
     padding: 0;
 }
 
+.navbar-user-drop {
+    margin-left: 20px;
+}
+
 .navbar-user {
     display: flex;
     align-items: center;

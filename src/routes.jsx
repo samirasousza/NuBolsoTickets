@@ -1,38 +1,47 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom';
 import Home from './pages/home/Home';
 import EventDetails from './pages/eventDetails/EventDetails';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import NotFound from './pages/notFound/NotFound';
 import App from './App';
+import { AuthContext } from './utils/UseAuth';
 
+const AppWrapper = () => {
+  const { isAuthentic, setIsAuthentic } = useContext(AuthContext);
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        index: true, // Página inicial
-        element: <Home />,
-      },
-      {
-        path: 'event-details',
-        element: <EventDetails />,
-      },
-      {
-        path: 'login',
-        element: <Login />,
-      },
-      {
-        path: 'signup',
-        element: <Signup />,
-      },
-      {
-        path: '*',
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        {
+          index: true, // Página inicial
+          element: <Home isAuthentic={isAuthentic} />,
+        },
+        {
+          path: 'login',
+          element: <Login setIsAuthentic={setIsAuthentic}/>,
+        },
+        {
+          path: 'signup',
+          element: <Signup />,
+        },
+        {
+          path: 'event-details',
+          element: <EventDetails />,
+        },
+        {
+          path: '*',
+          element: <NotFound />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
+
+};
+
+export default AppWrapper;
