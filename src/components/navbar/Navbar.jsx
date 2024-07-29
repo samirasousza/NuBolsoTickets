@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import Logo from '../../assets/NuBolsoLogo.png';
@@ -32,7 +32,7 @@ const Navbar = () => {
         {isAuthentic ? (
           <li className='navbar-user-drop'>
               <div className='navbar-user-box'>
-                <Dropdown isAuthenticated={isAuthentic} onLogout={handleLogout} />
+                <Dropdown onLogout={handleLogout} />
               </div>
           </li>
         ) : (

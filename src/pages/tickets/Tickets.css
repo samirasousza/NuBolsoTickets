@@ -1,15 +1,32 @@
 .tickets-container {
+    display: flex;
+    flex-direction: column;
     background-color: #FFC145;
     min-height: 100vh;
+    height: 100%;
     padding: 0;
     margin: 0;
 
 }
 
-.tickets-container h1 {
+.tickets-tittle {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px;
+}
+
+.tickets-tittle h1 {
+    font-size: 35px;
     color: #672274;
     text-transform: uppercase;
+}
+
+.tickets-cards {
+    flex: 1; /* Permite que o container de cartões se expanda para preencher o espaço disponível */
+    overflow-y: auto; /* Permite a rolagem vertical se o conteúdo exceder a altura da página */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    padding: 10px 30px 40px 30px;
 }

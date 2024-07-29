@@ -1,12 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Dropdown.css'
 import { FaUserAlt, FaUserCircle } from 'react-icons/fa';
 import { IoLogOut, IoTicket } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../utils/UseAuth';
 
-const Dropdown = ({ isAuthenticated, onLogout }) => {
+const Dropdown = ({ onLogout }) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const { isAuthentic } = useContext(AuthContext);
+    const [ userName, setUserName ] = useState('');
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.name) {
+            setUserName(user.name);
+        }
+    }, [isAuthentic]);
 
     const navigate = useNavigate();
 
@@ -26,11 +36,11 @@ const Dropdown = ({ isAuthenticated, onLogout }) => {
         <div className="dropdown-container">
             <button className={`dropdown-button ${isOpen ? 'toggled' : 'untoggled'}`} onClick={toggleDropdown}>
                 <FaUserCircle className='navbar-user-icon'/>
-                <span>Olá, Fulano</span>
+                <span>Olá, {userName}</span>
             </button>
             {isOpen && (
                 <div className="dropdown-menu">
-                {isAuthenticated ? (
+                {isAuthentic ? (
                     <div className='dropdown-itens'>
                         <button className="dropdown-item" onClick={handleTicket} >
                             <IoTicket className='dropdown-item-icon'/>

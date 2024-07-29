@@ -25,6 +25,8 @@ const Signup = () => {
     const newUser = { name, email, password };
     existingUsers.push(newUser);
     localStorage.setItem('users', JSON.stringify(existingUsers));
+    console.log(JSON.parse(localStorage.getItem('users')));
+
 
     navigate('/login');
   };

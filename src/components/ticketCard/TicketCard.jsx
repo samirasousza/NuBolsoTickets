@@ -23,7 +23,7 @@ const TicketCard = () => {
                 apikey: 'FcsA4CaN4M6CyCHDrAw6wnhsXLTfGetf', // Substitua pela sua chave da API
                 countryCode: 'US', // Filtrando por país, pode ajustar conforme necessário
                 //classificationName: 'music', // Exemplo de filtro por categoria de música
-                size: 3 // Número de eventos a serem retornados
+                size: 6 // Número de eventos a serem retornados
               }
             });
             setEvents(response.data._embedded.events);
@@ -42,42 +42,44 @@ const TicketCard = () => {
       }
 
     return (
-        <div className="eventcard-container">
-        {events.map(event => (
-            <div key={event.id} className="eventcard-box">
-              
-              <img src={event.images[0].url} alt={event.name} />
-              
-              <div className='eventcard-infos'>
-              
-                <h2>{event.name}</h2>
+        <div className="ticketcard-container">
+          <div className='ticketcard-boxes'>
+            {events.map(event => (
+                <div key={event.id} className="ticketcard-box">
+                  
+                  <img src={event.images[0].url} alt={event.name} />
+                  
+                  <div className='ticketcard-infos'>
+                  
+                    <h2>{event.name}</h2>
 
-                <div className='eventcard-itens'>
-                  <div className='eventcard-item'>
-                    <IoTime className='eventcard-item-icon'/>
-                    <p>Data: {new Date(event.dates.start.dateTime).toLocaleString()}</p>
-                  </div>
+                    <div className='ticketcard-itens'>
+                      <div className='ticketcard-item'>
+                        <IoTime className='ticketcard-item-icon'/>
+                        <p>Data: {new Date(event.dates.start.dateTime).toLocaleString()}</p>
+                      </div>
 
-                  <div className='eventcard-item'>
-                    <FaLocationDot className='eventcard-item-icon' />
-                    <div className='eventcard-item-location'>
-                      <p>Local: {event._embedded.venues[0].name}</p>
-                      <p>Endereço: {event._embedded.venues[0].address.line1}</p>
+                      <div className='ticketcard-item'>
+                        <FaLocationDot className='ticketcard-item-icon' />
+                        <div className='ticketcard-item-location'>
+                          <p>Local: {event._embedded.venues[0].name}</p>
+                          <p>Endereço: {event._embedded.venues[0].address.line1}</p>
+                        </div>
+                      </div>
                     </div>
+                  
                   </div>
-                </div>
-              
-              </div>
 
-                <div className='ticket-options'>
-                    <button className='ticket-print'onClick={() => CreatePDF(event)}>
-                        <PiPrinterFill />
-                        <span>Imprimir Ingresso</span>
-                    </button>
-                </div>
+                    <div className='ticketcard-options'>
+                        <button className='ticketcard-print'onClick={() => CreatePDF(event)}>
+                            <PiPrinterFill className='ticketcard-item-icon'/>
+                            <span>Imprimir Ingresso</span>
+                        </button>
+                    </div>
 
-            </div>
-        ))}
+                </div>
+            ))}
+          </div>
         </div>
     )
 }

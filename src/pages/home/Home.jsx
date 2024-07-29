@@ -6,10 +6,12 @@ import Footer from '../../components/footer/Footer';
 
 const Home = () => {
   return (
-    <div className="HomeContainer">
+    <div className="home-container">
       <Navbar />
-      <h1 className="HomeTittle">Eventos</h1>
-      <div className="HomeEventsContainer">
+      <div className='tickets-tittle' >
+        <h1>Eventos</h1>
+      </div>
+      <div className="home-cards">
         <EventCard />
       </div>
       <Footer />

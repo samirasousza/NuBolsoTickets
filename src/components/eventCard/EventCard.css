@@ -1,31 +1,151 @@
-.EventCardContainer {
-    background-color: #f0f0f0;
-    padding: 20px;
+.eventcard-container {
     display: flex;
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.eventcard-boxes {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    gap: 25px;
 }
   
-.EventCard {
+.eventcard-box {
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 20px;
+    /*flex-basis: calc(80% - 20px); /* Define a largura do card e subtrai a gap */
+    /* flex: 1 1 calc(33.333% - 40px); */
     width: 300px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    max-width: 400px; /*Define a largura máxima do card*/
+    box-shadow: 0 4px 8px rgba(103, 34, 116, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s; 
+    background-color: #f0f0f0;
 }
 
-.EventCard:hover {
+.eventcard-box:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(103, 34, 116, 0.5);
 }
 
-.EventCard h2 {
-    font-size: 1.5em;
+.eventcard-infos {
+    padding: 0 20px 10px 20px;
+}
+
+
+
+.eventcard-box img{
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura do container */
+    height: 200px; /* Mantém a proporção da imagem */
+    border-radius: 8px 8px 0 0; /* Adiciona bordas arredondadas à imagem */
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
-.EventCard p {
+.eventcard-box h2 {
+    font-size: 1.3em;
+    color: #672274;
+    
+    display: -webkit-box;         /* Necessário para usar -webkit-box-orient */
+    -webkit-box-orient: vertical; /* Define a orientação da caixa flexível */
+    overflow: hidden;             /* Esconde o texto que ultrapassa o limite */
+    text-overflow: ellipsis;      /* Adiciona reticências no final do texto truncado */
+    -webkit-line-clamp: 2;        /* Limita o número de linhas a 3 */
+    line-height: 1.5;             /* Altura da linha para calcular corretamente */
+    max-height: calc(1.5em * 2); 
+}
+
+.eventcard-itens {
+    display: flex;
+    align-items: center;
+}
+
+.eventcard-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #672274;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.eventcard-data p {
+    color: #FFC145;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.eventcard-text {
+}
+
+.eventcard-item {
+    display: flex;
+    align-items: center;
+    /* justify-content: center;
+    flex-direction: column; */
+    gap: 10px;
+    padding: 5px 0 5px 20px;
+}
+
+.eventcard-item-icon {
+    font-size: 15px;
+    color: #8e8c8c;
+}
+
+.eventcard-item-location {
+
+}
+
+.eventcard-item p {
+    font-size: 11px;
     margin: 5px 0;
+    color: #8e8c8c;
+}
+
+.eventcard-options {
+    display: flex;
+}
+
+.eventcard-print {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 15px 20px 10px 20px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.eventcard-item-icon {
+    font-size: 18px;
+    color: #672274;
+}
+
+.eventcard-print span {
+    text-decoration: none;
+    text-transform:uppercase;
+    color: #672274;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* Media Queries para ajustar os cartões em diferentes tamanhos de tela */
+@media (max-width: 12000px) {
+    .eventcard-box {
+        
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+    .eventcard-box {
+        
+        max-width: 280px;
+    }
 }
