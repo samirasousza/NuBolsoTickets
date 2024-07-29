@@ -95,7 +95,7 @@
     color: #672274;
 }
 
-.google-auth button{
+.auth-google {
     display: flex;
     align-items: center;
     justify-content: center;
