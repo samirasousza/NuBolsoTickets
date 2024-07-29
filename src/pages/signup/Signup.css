@@ -38,31 +38,32 @@
     border: none;
     height: 28px;
     width: 280px;
-    margin-bottom: 18px;
+    margin-bottom: 4px;
 }
 
 .signup-checkbox {
+    margin-top: 15px;
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 3px;
 }
 
-.signup-checkbox input{
-    display: flex;
-    font-size: 11px;
-    font-weight: 400;
-    text-transform: capitalize;
+.signup-checkbox input[type='checkbox']{
+    width: 16px;
+    height: 16px;
+    margin: 0;
 }
 
-.signup-checkbox p{
-    display: inline;
+.signup-checkbox label{
+    margin: 0;
     font-size: 11px;
     font-weight: 400;
     text-transform: capitalize;
+    color: #333;
 }
 
 .signup-checkbox a {
-    margin-left: 25px;
+    margin-left: 20px;
     font-size: 12px;
     color: #672274;
     font-style: normal;

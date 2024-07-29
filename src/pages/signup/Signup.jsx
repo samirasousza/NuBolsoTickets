@@ -27,7 +27,6 @@ const Signup = () => {
     localStorage.setItem('users', JSON.stringify(existingUsers));
     console.log(JSON.parse(localStorage.getItem('users')));
 
-
     navigate('/login');
   };
 
@@ -79,8 +78,8 @@ const Signup = () => {
           </div>
 
           <div className='signup-checkbox'>
-            <input type='checkbox'/>
-            <p>Mantenha-me Conectado</p>
+            <input type='checkbox' className='checkbox-custom'/>
+            <label>Mantenha-me Conectado</label>
             <a href=''>Esqueceu a senha?</a>
           </div>
 
